@@ -2,6 +2,8 @@
 import { Plus } from "lucide-react";
 import { CreateOrganization } from "@clerk/nextjs";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const NewButton = () => {
   return (
@@ -14,6 +16,9 @@ export const NewButton = () => {
         </div>
       </DialogTrigger>
       <DialogContent className="p-0 bg-transparent border-none max-w-[480px]">
+        <DialogTitle>
+          <VisuallyHidden>Title</VisuallyHidden>
+        </DialogTitle>
         <CreateOrganization routing="hash" />
       </DialogContent>
     </Dialog>
