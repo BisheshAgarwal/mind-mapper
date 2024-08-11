@@ -7,6 +7,7 @@ export const useApiMutation = (mutationFunction: any) => {
 
   const mutate = (payload: any) => {
     setPending(true);
+
     return apiMutation(payload)
       .finally(() => setPending(false))
       .then((result) => result)
